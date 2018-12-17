@@ -1,0 +1,28 @@
+version: '3.2'
+services:
+
+  #
+  # PHP APPLICATION SERVER
+  #
+  app:
+    build:
+      context: ./
+      args:
+        INSTALL_XDEBUG: ${DOCKER_INSTALL_XDEBUG:-0}
+        DOCKER_XDEBUG_PORT: ${DOCKER_XDEBUG_PORT:-9000}
+        DOCKER_XDEBUG_HEADER: ${DOCKER_XDEBUG_HEADER:-""}
+    working_dir: /var/www/html
+    environment:
+      APP_ENV: local
+      APP_KEY: "base64:V9/AAMYTKvZUGyPVvUZ8Y2CyYY9BEUi65xfx/wQxQTQ="
+      APP_DEBUG: "true"
+      VIRTUAL_HOST: "credit-score.ratehub.test"
+      VIRTUAL_PORT: "80"
+    volumes:
+    - laravel-storage-volume:/var/www/html/storage
+    - ./:/var/www/html:delegated
+    - ./composer.json:/var/www/composer.json
+    - ./composer.lock:/var/www/composer.lock
+
+volumes:
+  laravel-storage-volume:

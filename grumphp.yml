@@ -1,0 +1,15 @@
+parameters:
+  git_dir: .
+  bin_dir: vendor/bin
+  tasks:
+    make:
+      task: it
+    composer: ~
+    git_branch_name:
+      matchers:
+        Branch names must start with JIRA issue reference: /^(master|dev|(([a-z]+(?<!master)-\d+)|fix|dev)(-[a-z\d]+)*)$/
+      additional_modifiers: ''
+    git_commit_message:
+      allow_empty_message: false
+      max_subject_width: 72
+      case_insensitive: false

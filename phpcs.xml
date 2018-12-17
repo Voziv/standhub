@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<ruleset name="Ratehub">
+    <description>Ratehub.ca coding standards</description>
+
+    <!--
+    If no files or directories are specified on the command line
+    your custom standard can specify what files should be checked
+    instead.
+    Note that specifying any file or directory path
+    on the command line will ignore all file tags.
+    admin/ cron/ handlers/ includes/ sources/RateHub/ laravel/app/ laravel/tests/ tests/
+    -->
+    <file>src/Ratehub</file>
+    <file>src/App</file>
+    <file>tests</file>
+
+    <!--
+       You can hard-code ignore patterns directly into your
+       custom standard so you don't have to specify the
+       patterns on the command line.
+    -->
+    <exclude-pattern>*/database/*</exclude-pattern>
+    <exclude-pattern>*/cache/*</exclude-pattern>
+    <exclude-pattern>*/*.js</exclude-pattern>
+    <exclude-pattern>*/*.css</exclude-pattern>
+    <exclude-pattern>*/*.xml</exclude-pattern>
+    <exclude-pattern>*/*.blade.php</exclude-pattern>
+    <exclude-pattern>*/autoload.php</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/migrations/*</exclude-pattern>
+
+    <!--
+       You can hard-code command line values into your custom standard.
+       Note that this does not work for the command line values:
+       -v[v][v], -l, -d, -sniffs and -standard
+       The following tags are equivalent to the command line arguments:
+       -p
+    -->
+    <arg name="report" value="summary"/>
+    <arg name="colors"/>
+    <arg value="p"/>
+
+    <!-- PHP INI Settings -->
+    <ini name="memory_limit" value="128M"/>
+
+    <!-- Include all sniffs in the PSR2 standard. -->
+    <rule ref="PSR2">
+        <exclude name="Generic.Files.LineLength.TooLong"/>
+        <exclude name="PEAR.Functions.ValidDefaultValue.NotAtEnd"/>
+        <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace"/>
+        <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
+    </rule>
+</ruleset>
