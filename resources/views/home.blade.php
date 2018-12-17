@@ -4,7 +4,7 @@
     <div class="container">
         <div class="content">
             <div class="standup-form">
-                <form action="/send" method="POST">
+                <form action="/standup/send" method="POST">
                     <div class="form-group">
                         <label for="who">You are who?</label>
                         <input class="form-control" id="who" name="who" value="{{ Auth::user()->name }}" readonly>
@@ -21,7 +21,7 @@
                         <label for="challenges">Challenges standing in my way</label>
                         <textarea class="form-control" rows="5" cols="80" name="challenges" id="challenges"></textarea>
                     </div>
-                    
+
                     {{ csrf_field() }}
 
                     <button class="btn btn-primary btn-lg" type="submit">STAND'R UP</button>
