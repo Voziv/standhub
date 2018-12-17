@@ -17,7 +17,7 @@ return [
     'google' => [
         'client_id'     => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect'      => env('GOOGLE_CLIENT_REDIRECT', 'http://localhost:8000/callback'),
+        'redirect'      => env('GOOGLE_CLIENT_REDIRECT', 'http://localhost:8000/auth/google/callback'),
 
     ],
 

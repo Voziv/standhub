@@ -18,13 +18,13 @@ class GoogleController extends Controller
 
     public function redirect()
     {
-        return Socialite::driver('google')->redirectUrl('http://localhost:8000/auth/google/callback')->redirect();
+        return Socialite::driver('google')->redirectUrl(config('services.google.redirect'))->redirect();
     }
 
     public function callback()
     {
         try {
-            $googleUser = Socialite::driver('google')->redirectUrl('http://localhost:8000/auth/google/callback')->stateless()->user();
+            $googleUser = Socialite::driver('google')->redirectUrl(config('services.google.redirect'))->stateless()->user();
 
             if (stripos($googleUser->getEmail(), '@ratehub.ca') === false) {
                 throw new AuthorizationException("You shalt not pass");
