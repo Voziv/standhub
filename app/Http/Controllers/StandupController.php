@@ -37,7 +37,7 @@ $challenges
 
 ");
 
-        return redirect('/thanks');
+        return redirect('/standup/thanks');
     }
 
     public function thanks()

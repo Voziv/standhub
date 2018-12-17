@@ -19,5 +19,5 @@ Route::get('/auth/google/callback', 'Auth\GoogleController@callback');
 
 Route::get('/', 'WelcomeController@welcome');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/standup/send', 'StandupController@send');
-Route::get('/standup/thanks', 'StandupController@thanks');
+Route::post('/standup/send', 'StandupController@send')->name('standup-send');
+Route::get('/standup/thanks', 'StandupController@thanks')->name('standup-thanks');
