@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Standhub</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:200,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
     <style>
         html, body {
             background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
+            color: #f7f7f7;
+            font-family: 'Roboto', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
@@ -36,39 +36,50 @@
 
         .content {
             text-align: center;
+            background: rgba(0, 0, 0, 0.85);
+            box-shadow: #1b1e21 10px 10px 10px;
+            padding: 4rem;
         }
 
         .title {
             font-size: 84px;
         }
 
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
+        .google-sign-in {
+            display: block;
+            width: 382px;
+            height: 92px;
+            background: url('img/signin-assets/web/2x/btn_google_signin_dark_normal_web@2x.png') no-repeat center center;
+        }
+
+        .google-sign-in:active {
+            background: url('img/signin-assets/web/2x/btn_google_signin_dark_pressed_web@2x.png') no-repeat center center;
+        }
+
+        .google-sign-in:focus {
+            background: url('img/signin-assets/web/2x/btn_google_signin_dark_focus_web@2x.png') no-repeat center center;
+            outline: none;
         }
 
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        .splash {
+            background: url('/img/splash.jpg');
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
+<div class="flex-center position-ref full-height splash">
     <div class="content">
         <div class="title m-b-md">
             Standhub
         </div>
-        <div class="m-b-md">
-            Where do you want to go today?
-        </div>
         @if (Route::has('google-login'))
-            <div class="m-b-md">
-                <a class="btn btn-primary" href="{{ route('google-login') }}">Login With Google</a>
+            <div>
+                <a class="google-sign-in" href="{{ route('google-login') }}"></a>
             </div>
         @endif
     </div>
