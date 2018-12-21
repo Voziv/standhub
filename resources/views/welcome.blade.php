@@ -36,9 +36,10 @@
 
         .content {
             text-align: center;
-            background: rgba(0, 0, 0, 0.85);
-            box-shadow: #1b1e21 10px 10px 10px;
-            padding: 4rem;
+            background: rgba(0, 0, 0, 0.75);
+            box-shadow: #353f44 1px 1px 2px;
+            padding: 6rem;
+            border-radius: 0.50rem;
         }
 
         .title {

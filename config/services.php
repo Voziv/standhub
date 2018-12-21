@@ -36,6 +36,11 @@ return [
     'slack' => [
         'webhook_url' => env('SLACK_HOOK'),
         'channel'     => env('SLACK_CHANNEL'),
+        'channel_list' => [
+            '#platform-backend',
+            '#core-chat',
+            '#front-end',
+        ],
     ],
 
     'sparkpost' => [
